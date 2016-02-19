@@ -6,6 +6,7 @@
 int main( int argc, char ** args ) {
 	int trim_min = 35;
 	int trim_max = INT_MAX;
+	int len;
 
 	if( argc > 1 ) trim_min = (int) atoi( args[1] );
 	if( argc > 2 ) trim_max = ((int) atoi( args[2] )) + 1;
@@ -24,8 +25,7 @@ int main( int argc, char ** args ) {
 		getline( &line3, &buffer, stdin );
 		getline( &line4, &buffer, stdin );
 		
-		//NEED TO CONFIRM OBO BELOW:
-		int len = strlen( line2 );
+		len = strlen( line2 );
 		if( len > trim_min && len < trim_max ) {
 			printf("%s%s%s%s", line1, line2, line3, line4);
 		}
