@@ -8,4 +8,6 @@ Tool to Filter FastQ-Formatted Reads by Length
 
 ### Usage
 
-`./filter <minimum length>`
+`./filter <minimum length> <maximum length>`
+
+Pipes STDIN to STDOUT, accepting only reads from [min, max)
