@@ -1,11 +1,11 @@
 # fastq_filter
 Tool to Filter FastQ-Formatted Reads by Length
 
-## Building
+### Building
 
 1. Clone Repository
 2. Run `make`
 
-## Usage
+### Usage
 
 `./filter <minimum length>`

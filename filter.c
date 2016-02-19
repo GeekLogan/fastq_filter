@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <limits.h>
 
 int main( int argc, char ** args ) {
-	int trim_len = 35;
+	int trim_min = 35;
+	int trim_max = INT_MAX;
 
-	if( argc > 1 ) {
-		trim_len = (int) atoi( args[1] );
-	}
+	if( argc > 1 ) trim_min = (int) atoi( args[1] );
+	if( argc > 2 ) trim_max = (int) atoi( args[2] );
 	
 	char * line1, * line2, * line3, * line4;
 	size_t buffer = 250;
@@ -23,7 +24,8 @@ int main( int argc, char ** args ) {
 		getline( &line3, &buffer, stdin );
 		getline( &line4, &buffer, stdin );
 		
-		if( strlen( line2 ) > trim_len ) {
+		//NEED TO CONFIRM OBO BELOW:
+		if( strlen( line2 ) > trim_min && strlen( line2 ) < trim_max ) {
 			printf("%s%s%s%s", line1, line2, line3, line4);
 		}
 	}
