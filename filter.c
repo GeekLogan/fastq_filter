@@ -8,7 +8,7 @@ int main( int argc, char ** args ) {
 	int trim_max = INT_MAX;
 
 	if( argc > 1 ) trim_min = (int) atoi( args[1] );
-	if( argc > 2 ) trim_max = (int) atoi( args[2] );
+	if( argc > 2 ) trim_max = ((int) atoi( args[2] )) - 1;
 	
 	char * line1, * line2, * line3, * line4;
 	size_t buffer = 250;
